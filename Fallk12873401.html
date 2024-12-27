@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #redirectBtn {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #redirectBtn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wait for 15 Seconds</h1>
+    <p>the link button will appear in <span id="timer">15</span> seconds.</p>
+    <button id="redirectBtn" onclick="window.location.href='https://pastebin.com/raw/Crm5LFiU'">Go to Site</button>
+
+    <script>
+        let timeLeft = 15;
+        const timerElement = document.getElementById('timer');
+        const redirectBtn = document.getElementById('redirectBtn');
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            if (timeLeft === 0) {
+                clearInterval(countdown);
+                redirectBtn.style.display = 'inline-block';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
